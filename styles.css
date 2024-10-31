@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calendar-container {
+    width: 90%;
+    max-width: 1100px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#month-year {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+th, td {
+    width: 14.2%;
+    height: 80px;
+    text-align: center;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+td.event {
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+}
+
+.event-form {
+    margin-top: 20px;
+}
+
+input {
+    width: 70%;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#event-list {
+    margin-top: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    height: 100px;           
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;            
+}
+
+.shadowed-heading {
+	font-style: italic;
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 0; 
+}
+
+td.low {
+    background-color: #2ecc71; 
+    color: white;
+}
+
+td.medium {
+    background-color: #f1c40f; 
+    color: black;
+}
+
+td.high {
+    background-color: #e74c3c; 
+    color: white;
+}
