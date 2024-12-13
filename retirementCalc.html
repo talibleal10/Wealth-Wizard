@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Calculator</title>
+    <link rel = "stylesheet" href = "InvestmentCalc.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Retirement Calculator</h1>
+        <form id="retirement-form">
+            <label for="currentAge">Current Age:</label>
+            <input type="number" id="currentAge" placeholder="Enter your age" required>
+
+            <label for="retirementAge">Desired Retirement Age:</label>
+            <input type="number" id="retirementAge" placeholder="Enter retirement age" required>
+
+            <label for="currentSavings">Current Savings:</label>
+            <input type="number" id="currentSavings" placeholder="Enter current savings" required>
+
+            <label for="monthlyContribution">Monthly Contribution:</label>
+            <input type="number" id="monthlyContribution" placeholder="Enter monthly contribution" required>
+
+            <label for="expectedROI">Expected Annual Return (%):</label>
+            <input type="number" id="expectedROI" placeholder="Enter annual return rate" required>
+
+            <button type="button" onclick="calculateRetirement()">Calculate</button>
+        </form>
+        <div id="results"></div>
+    </div>
+    <script>
+        function calculateRetirement() {
+            const currentAge = parseInt(document.getElementById('currentAge').value);
+            const retirementAge = parseInt(document.getElementById('retirementAge').value);
+            const currentSavings = parseFloat(document.getElementById('currentSavings').value);
+            const monthlyContribution = parseFloat(document.getElementById('monthlyContribution').value);
+            const expectedROI = parseFloat(document.getElementById('expectedROI').value) / 100;
+
+            const yearsToRetirement = retirementAge - currentAge;
+            if (yearsToRetirement <= 0) {
+                alert("Retirement age must be greater than current age.");
+                return;
+            }
+
+            let futureValue = currentSavings;
+            for (let i = 0; i < yearsToRetirement; i++) {
+                futureValue += monthlyContribution * 12;
+                futureValue *= 1 + expectedROI;
+            }
+
+            document.getElementById('results').innerText = `Estimated Retirement Savings: $${futureValue.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

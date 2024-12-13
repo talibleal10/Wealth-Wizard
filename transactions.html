@@ -4,31 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transactions</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="transactions.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="transactions.js"></script>
+
 </head>
 <body>
     <div class="container">
         <!-- Sidebar -->
-        <div class="sidebar">
-            
-            <ul class="menu">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="transactions.html">Transactions</a></li>
-                <li><a href="cashflow.html">Cash Flow</a></li>
-                <li><a href="accounts.html">Accounts</a></li>
-                <li><a href="investments.html">Investments</a></li>
-                <li><a href="categories.html">Categories</a></li>
-            </ul>
+        <div class="topnav">
+            <a href="index.html">
+                <a href="signin.html"><img src="WizardLogo.jpeg" alt="Logo for webpage" width="75" height="75"></a>
+            </a>
+            <div class="navlinks">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="transactions.html">Transactions</a>
+                <a href="accounts.html">Accounts</a>
+                <a href="investments.html">Investments</a>
+                <a href="Calendar.html">Calendar</a>
+            </div>
         </div>
         
         <!-- Main Content -->
         <div class="main-content">
-            <header>
-                <h1>Transactions</h1>
-            </header>
+            <h1>Transactions</h1>   
+        </div>	
 
+        <!-- Payment Input Form -->
+        <div class="transaction-input">
+            <h2>Add a New Payment</h2>
+            <label for="paymentAmount">Enter Payment Amount:</label>
+            <input type="number" id="paymentAmount" placeholder="e.g., 100">
+            
+            <label for="paymentCategory">Select Category:</label>
+            <select id="paymentCategory">
+                <option value="dining">Dining</option>
+                <option value="transportation">Transportation</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="investment">Investment</option>
+                <option value="others">Other</option>
+                <option value="utilities">Utilities</option>
+                <option value="health">Health</option>
+            </select>
+            <label for="paymentPlace">Brief Place of Payment:</label>
+            <input type="text" id="paymentPlace" placeholder="e.g., Amazon, Target">
 
+            <button onclick="addTransaction()">Add Payment</button>
+        </div>
+        
+        <!-- Display New Transactions -->
+        <div class="transaction-log">
+            <h2>Transaction Log</h2>
+            <ul id="transactionList"></ul>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="chart-container">
+            <canvas id="categoryChart"></canvas>
         </div>
     </div>
+    
+    <footer>
+        <h2>Wealth Wizard</h2>
+    </footer>
+
 </body>
 </html>

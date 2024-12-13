@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--  -->
+	<title>Investment Calculator</title>
+	<meta charset = "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "InvestmentCalc.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <h1>Investment Calculator</h1>
+        <!-- This is the label and input field for the investment amount  -->
+        <label for="investment">Investment Amount ($)</label>
+        <br>
+        <input type = "number" id="investment" placeholder="Enter Investment Amount">
+        <br>
+
+        <!-- This is the label and input field for the investment amount  -->
+        <label for="rate">Annual Interest Rate (%)</label>
+        <br>
+        <input type = "number" id="rate" placeholder="Enter Interest Rate">
+        <br>
+        <!-- This is the label and input field for the investment amount  -->
+        <label for="years">Number of years you're investing: </label>
+        <br>
+        <input type = "number" id="years" placeholder="Enter Number of Years">
+        <br>
+
+        <!-- This button is used for the investment calculation  -->
+        <button onclick = "calculateInvestment()">Calculate</button>
+
+        <!-- This displays the results after you click the button -->
+        <p>Principal Amount: <span id = "principalAmount"></span></p>
+        <p>Total Interest: <span id = "totalInterest"></span></p>
+        <p>Total Value: <span id = "totalValue"></span></p>
+    </div>
+    
+    <script>
+        function calculateInvestment() {
+        // This obtains the input values and it also converts it to the appropriate data types
+            const investment = parseFloat(document.getElementById('investment').value);
+            // This converts the percentage into a decimal
+            const rate = parseFloat(document.getElementById('rate').value)/100;
+            const years = parseInt(document.getElementById('years').value);
+        
+        // This checks to make sure that the numbers entered are only postive numbers. And if the numbers are valid or not
+        if (isNaN(investment) || isNaN(rate) || isNaN(years) || investment <= 0 || rate <= 0 || years <= 0) {
+            // This will be displayed if the number entered has failed
+            alert('Only Enter Positive Values')
+            return;
+        }
+
+        // This calculates the final amount using the compound interest formula
+        const finalAmount = investment * Math.pow(1 + rate, years);
+        // This is were the total intrested earned is calculated
+        const totalInterest = finalAmount - investment;
+
+        // This displays tthe results that were calculated in the relative HTML elements
+        document.getElementById('principalAmount').textContent = `$${investment.toFixed(2)}`;
+        document.getElementById('totalInterest').textContent = `$${totalInterest.toFixed(2)}`;
+        document.getElementById('totalValue').textContent = `$${finalAmount.toFixed(2)}`;
+    }
+    </script>
+</body>
+</html>

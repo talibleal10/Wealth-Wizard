@@ -1,34 +1,72 @@
 <!DOCTYPE html>
+<!-- -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investments</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="investments.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+	<!--This holds the entire content of the page -->
+	
     <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            
-            <ul class="menu">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="transactions.html">Transactions</a></li>
-                <li><a href="cashflow.html">Cash Flow</a></li>
-                <li><a href="accounts.html">Accounts</a></li>
-                <li><a href="investments.html">Investments</a></li>
-                <li><a href="categories.html">Categories</a></li>
-            </ul>
-        </div>
+        <!-- Sidebar for the investments page -->
+        <nav class="topnav">
         
-        <!-- Main Content -->
+        <a href = "signin.html">
+        	<label>
+        		<img src="WizardLogo.jpeg" alt = "Logo for webpage" weight = "75" height 
+        		= "75">
+        	</label>
+        	</a>
+        
+        	<ul class="navlinks">
+  				<li><a class = "active" href="dashboard.html">Dashboard</a></li>
+  				<li><a href="transactions.html">Transactions</a></li>
+  				<li><a href="accounts.html">Accounts</a></li>
+  				<li><a href="investments.html">Investments</a></li>
+  				<li><a href="Calendar.html">Calendar</a></li>
+  			</ul>
+		</nav>
+		
+		<!-- Main Content -->
         <div class="main-content">
-            <header>
-                <h1>Investments</h1>
-            </header>
-
-
+            <h1>Investments</h1>     
+            
+            <div class="investment-overview">
+                <p>Here you can view various markets, track their trends, 
+                and make new informed investment decisions.</p>
+            </div>
+			<!--This will include all the investment performance charts-->
+            <div class="investment-charts">
+            	<h2>Investment Performance</h2>
+            	
+            	<!--This is the US Stock Market Chart -->
+            	<h3>US Stock Market</h3>
+            	<canvas id="stock-market-chart" width = "400" height = "200"></canvas>
+            	
+            	<!--This is the Housing Market Chart -->
+            	<h3>Housing Market (Based on ZIP Code)</h3>
+            	<input type="text" id="zip-code-house" placeholder="Enter ZIP Code">
+            	<button onclick="updateHousingData()">Update</button>
+            	<canvas id="house-market-chart" width="400" height="200"></canvas>
+            	
+            	<!--This is the Car Market Chart -->
+            	<h3>Car Market (Based on ZIP Code)</h3>
+            	<input type="text" id="zip-code-car" placeholder="Enter ZIP Code">
+            	<button onclick="updateCarData()">Update</button>
+            	<canvas id="car-market-chart" width="400" height="200"></canvas>
+            </div>
         </div>
     </div>
+    
+ <!-- JavaScript for Chart.js and Data Fetching -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+ <script src="investments.js"></script>
+ 
 </body>
 </html>

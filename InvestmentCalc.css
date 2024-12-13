@@ -1,0 +1,89 @@
+/* InvestmentCalc.css */
+
+/* Makes sure that the font remains consistent */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+/* This is for the entire background of the webpage. Decided to go for a gradient background */
+body {
+    height: 100vh;
+    background: linear-gradient(#001c1a, #013935)
+}
+
+/* This is for styling the main heading of the calculator displayed on webpage */
+h1 {
+    color: white;
+    font-family: "Arial Black";
+    /* This adds space above the heading */
+    margin-top: 20px;
+    /* This adds space below the heading */
+    margin-bottom: 10px;
+}
+
+/* This is for changing the overall appearance or size of the entire calculator on the webpage */
+.calculator {
+    /* This sets the width of the calculator */
+    width: 300px;
+    /* This sets the height of the calculator */
+    height: 500px;
+    /* This applies the background for the calculator */
+    background-color: #01796F;
+    /* This makes sure the  calculator is centered */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px 0px;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    /* This adds a shadow for the calculator */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    color: white;
+    margin: 10px;
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+    outline: none;
+    /* This removes the default border */
+    border: none;
+    /* This rounds the edges space above the heading */
+    border-radius: 5px;
+}
+
+/* These are the features I've done to change the style of the button */
+button {
+    font-size: 18px;
+    font-weight: bold;
+    width: 160px;
+    height: 30px;
+    /* This rounds the edges of the button */
+    border-radius: 5px;
+    /* The default border is removed */
+    border: none;
+    color:black;
+    background-color: #f4a261;
+    font-weight: 999;
+}
+
+/* The button changes color when you hover your mouse over it */
+button:hover {
+    background-color: #d48748;
+    border-bottom-color: #111;
+    /* This trasitions the hover effect */
+    transition: .4s ease;
+}
+
+p{
+    color: white;
+    margin-top: 20px;
+}

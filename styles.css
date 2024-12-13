@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Black', sans-serif;
+}
+
+/*body {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 80px;
+    background-image: url('./lightning.gif');
+}lihgtning
+*/
+body {
+    background-color: gray;
+    background-image: url('./lightning.gif'); /* Ensure path is correct */
+    background-size: cover; /* Make sure the image covers the full background */
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 80px;
+}
+
+
+.calendar-container {
+    width: 90%;
+    max-width: 1100px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 40px; /* Add space below the header */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#month-year {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+th, td {
+    width: 14.2%;
+    height: 80px;
+    text-align: center;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+td.event {
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+}
+
+.event-form {
+    margin-top: 20px;
+}
+
+input {
+    width: 70%;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#event-list {
+    margin-top: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    height: 100px;           
+    width: 100%;            
+}
+
+.shadowed-heading {
+	/* font-style: italic; */
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 0; 
+}
+
+td.low {
+    background-color: #2ecc71; 
+    color: white;
+}
+
+td.medium {
+    background-color: #f1c40f; 
+    color: black;
+}
+
+td.high {
+    background-color: #e74c3c; 
+    color: white;
+}
+
+
+.logo {
+    position: absolute;
+    top: 10px; /* Adjust the top distance */
+    left: 10px; /* Adjust the left distance */
+    width: 150px; /* Set a width for the image */
+    height: auto; /* Keep the aspect ratio */
+}
+
+
+/* Navigation Bar */
+.topnav {
+    display: flex;
+    align-items: center;
+    background-color: #01796F;
+    padding: 10px;
+    position: fixed; /* Keep the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar stays on top of other content */
+}
+
+.topnav img {
+    margin-right: 20px;
+}
+
+.topnav .navlinks {
+    display: flex;
+}
+
+.topnav .navlinks a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-left: 20px; /* Space between navigation links */
+}
+
+.topnav .navlinks a:hover {
+    background-color: #04dbc9;
+    color: black;
+}
+
+.topnav .navlinks a.active {
+    background-color: #1b9bff;
+    color: black;
+}
+
+/* Modify the calendar container to ensure it doesn't overlap with the navbar */
+.calendar-container {
+    width: 90%;
+    max-width: 1100px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 80px; /* Add more space to prevent overlap with the navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* Ensure the event form is spaced properly */
+.event-form {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.login-container {
+  margin: auto;
+  margin-top: 50px; /* Adjust this value to move it lower */
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+.test-button {
+  margin-top: 10px;
+  background-color: #6c757d;
+  color: white;
+}
+
+.test-button:hover {
+  background-color: #495057;
+}
+
+/* For the Create an Account title */
+.create-account-title {
+  color: purple; /* Change text color here (e.g., orange) */
+}
+
+/* For the Sign In title */
+.sign-in-title {
+  color: purple; /* Change text color here (e.g., green) */
+}

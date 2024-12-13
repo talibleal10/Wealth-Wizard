@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js" ></script>
 </head>
 <body>
     <div class="container">
         <!-- Sidebar -->
-        <div class="sidebar">
-            
-            <ul class="menu">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="transactions.html">Transactions</a></li>
-                <li><a href="cashflow.html">Cash Flow</a></li>
-                <li><a href="accounts.html">Accounts</a></li>
-                <li><a href="investments.html">Investments</a></li>
-                <li><a href="categories.html">Categories</a></li>
-            </ul>
-        </div>
+        <nav class="topnav">
         
+			<a href = "signin.html">
+				<label>
+					<img src="WizardLogo.jpeg" alt = "Logo for webpage" weight = "75" height 
+					= "75">
+				</label>
+				</a>
+			
+				<ul class="navlinks">
+					  <li><a class = "active" href="dashboard.html">Dashboard</a></li>
+					  <li><a href="transactions.html">Transactions</a></li>
+					  <li><a href="accounts.html">Accounts</a></li>
+					  <li><a href="investments.html">Investments</a></li>
+					  <li><a href="Calendar.html">Calendar</a></li>
+				  </ul>
+			</nav>
+			
+		
         <!-- Main Content -->
         <div class="main-content">
             <header>
@@ -28,29 +38,40 @@
             </header>
 
             <section class="dashboard-cards">
-                <div class="card large-card">
-                    <h2>Transactions To Review</h2>
-                    <ul>
-                        <li>Target - $13.87</li>
-                        <li>Online Banking Transfer - $800.00</li>
-                        <li>Amazon - $50.73</li>
-                    </ul>
+                <div class="card large-card money-out">
+                    <!-- up to 5 most recent transactions -->
+                    <h2>Recent Money out:</h2>
+                    <ul id="money-out" class="money-out"></ul> <!-- Will populate via JS -->
+                </div>
+            
+                <div class="card small-card top-categories">
+                    <!-- up to 5 most used categories -->
+                    <h2>Top Categories</h2>
+                    <ul id="top-categories" class="top-categories"></ul> <!-- Will populate via JS -->
+                </div>
+            
+                <div class="card small-card monthly-income">
+                    <h2>Monthly Income</h2>
+                    <label for="income">Enter Monthly Income: $</label>
+                    <input type="number" id="income" placeholder="e.g., 1500">
+                    <button onclick="changeMonthlyIncome()">Add Income</button>
+                    <p id="monthlyIncome"></p><!-- Will populate via JS from changeMonthlyIncome()-->
+                </div>
+            
+                <div class="card small-card top-spenders">
+                    <!-- up to 5 biggest transactions in $ -->
+                    <h2>Top Spenders</h2>
+                    <ul id="top-spenders" class="top-spenders"></ul> <!-- Will populate via JS -->
+                </div>
+            
+                <div class="card small-card budget">
+                    <!-- pie chart from transactions.js -->
+                    <h2>Budget</h2>
+                    <canvas id="piechart"></canvas>
                 </div>
 
-                <div class="card small-card">
-                    <h2>Top Categories</h2>
-                    <ul>
-                        <li>Rent - $1984</li>
-                        <li>Food & Drink - $375</li>
-                        <li>Car & Transport - $553</li>
-                    </ul>
-                </div>
-                
-                <div class="card small-card">
-                    <h2>Monthly Income</h2>
-                    <p>$5600.00</p>
-                </div>
             </section>
+
         </div>
     </div>
 </body>

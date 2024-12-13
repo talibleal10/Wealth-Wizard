@@ -4,31 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accounts</title>
-    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="accounts.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+	<script src="accounts.js" ></script>
+
 </head>
 <body>
-    <div class="container">
+<div class="container">
         <!-- Sidebar -->
-        <div class="sidebar">
-            
-            <ul class="menu">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="transactions.html">Transactions</a></li>
-                <li><a href="cashflow.html">Cash Flow</a></li>
-                <li><a href="accounts.html">Accounts</a></li>
-                <li><a href="investments.html">Investments</a></li>
-                <li><a href="categories.html">Categories</a></li>
-            </ul>
-        </div>
-        
-        <!-- Main Content -->
+        <div class="topnav">
+        	<a href = "index.html">
+        		<a href="signin.html"><img src="WizardLogo.jpeg" alt="Logo for webpage" width="75" height="75"></a>
+        	</a>
+        	<div class="navlinks">
+  				<a href="dashboard.html">Dashboard</a>
+  				<a href="transactions.html">Transactions</a>
+  				<a href="accounts.html">Accounts</a>
+  				<a href="investments.html">Investments</a>
+  				<a href="Calendar.html">Calendar</a>
+  			</div>
+		</div>
+
+		<div class="container">
+		<!-- Main Content -->
         <div class="main-content">
-            <header>
-                <h1>Accounts</h1>
-            </header>
-
-
+            <h1>Accounts</h1>
+            <div class="account-switcher">
+                <label for="accountSelector">Switch Checking Account:</label>
+                <select id="accountSelector">
+                    <option value="checking1" selected>Checking Account 1</option>
+                    <option value="checking2">Checking Account 2</option>
+                    <option value="checking3">Checking Account 3</option>
+                </select>
+            </div>
         </div>
-    </div>
+        <div class="card large-card">
+            <h2>Total Savings and Account Balance:</h2>
+            <label for="accountbalance">Enter Total Account Balance:</label>
+            <input type="number" id="accountbalance" placeholder="e.g., 100">
+            <label for="accountType">Select Account Type:</label>
+            <select id="accountType">
+                <option value="savings1">Savings Account 1</option>
+                <option value="savings2">Savings Account 2</option>
+                <option value="checking2">Checking Account 2</option>
+                <option value="checking3">Checking Account 3</option>
+            </select>
+            <button onclick="addBankAccount()">Add Account</button>
+
+            <h3>Your Accounts:</h3>
+            <div class="accounts-list"></div>
+        </div>
+
+        <div class="card large-card">
+            <h2>Total Loans and Debt:</h2>
+            <label for="lenderName">Lender Name:</label>
+            <input type="text" id="lenderName" placeholder="e.g., Bank XYZ">
+            <label for="loanBalance">Loan Amount:</label>
+            <input type="number" id="loanBalance" placeholder="e.g., 1000">
+            <label for="monthlyPayments">Monthly Payments:</label>
+            <input type="number" id="monthlyPayments" placeholder="e.g., 100">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate">
+            <button onclick="addLoan()">Add Loan or Debt</button>
+
+            <h3>Your Loans:</h3>
+            <div class="loans-list"></div>
+        </div>
+
+            
+            <div class="loans-list"></div> <!-- Placeholder for loans -->
+			
+			<h3>Calculator:</h3>
+			<div class="card small-card">
+				<label for="calculator">Select Calculator:</label>
+				<select id="calculator">
+					<option value="retirmentCalc">Retirement Calculator</option>
+					<option value="morgateCalc"> Mortgage Calculator</option>
+					<option value="autoCalc">Auto Loan Calculator</option>
+					<option value="savingCalc">Savings Calculator</option>
+					<option value="investmentCalc">Investment Calculator</option>
+					<option value="taxCalc">Tax Calculator</option>
+					<option value="businessCalc">Business Calculator</option>
+					<option value="ccDebtCalc">Credit Card & Debt Payoff Calculator</option>
+					<option value="loanCalc">Loan Payment Calculator</option>
+				</select>
+				<button onclick="useCalculator()">Use This kind of Calculator</button>
+			</div>	
+</div>
+	<footer>
+		<h2>Footer</h2>
+	</footer>
 </body>
 </html>

@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: 'Arial Black', sans-serif;
+    background-color: #0E1117;
+    color: #E0E6F1;
+}
+
+nav {
+	background: #0082e6;
+	height: 80px;
+	width: 100%;
+}
+
+label.logo {
+	color: white;
+	font-size: 35px;
+	line-height: 80px;
+	padding: 0 100px;
+	font-weight: bold;
+}
+
+nav ul {
+	float: right;
+	margin-right: 20px;
+}
+
+nav ul li {
+	display: inline-block;
+	line-height: 80px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	margin: 0 5px;
+}
+
+nav ul li a {
+	color: white;
+	font-size: 17px;
+	text-transform: uppercase;
+
+}
+
+ a.active,a:hover {
+	/* background: #1b9bff; */
+	cursor: pointer;
+	transition: .5s ease;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #161B22;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    margin: 20px 0;
+}
+
+.menu a {
+    color: #9DA5B4;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    color: #fff;
+}
+
+.main-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.chart-container {
+    margin: 20px;
+}
+
+.chart-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    font-size: 32px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.card {
+    background-color: #1F2633;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.large-card {
+    grid-column: span 2;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    margin: 10px 0;
+    color: #9DA5B4;
+}
+
+.card p {
+    font-size: 24px;
+    color: #9DA5B4;
+}
+
+.topnav a {
+  /* float: left;
+  display: block; */
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav {
+  	display: flex;
+    align-items: center;
+    background-color: #01796F;
+    padding: 10px;
+}
+
+.topnav img {
+	margin-right: 20px;
+}
+
+/* Changes color when you hover your mouse around the nav */
+.topnav .navlinks a:hover {
+  background-color: #04dbc9;
+  color: black;
+}
+
+.topnav .navlinks {
+    display: flex;
+}
+
+.topnav .navlinks a {
+	color: #f2f2f2;
+  	text-align: center;
+  	padding: 14px 16px;
+	text-decoration: none;
+    margin-left: 20px; /* Space between navigation links */
+}
+
+.main-content {
+  padding: 30px;
+  text-align: center;
+  /* top: 250px;
+  left: 420px; */
+}
+
+.main-content h1 {
+	font-size: 70px;
+	top: 50px;
+	left: 120px;
+}
+
+img {
+	/* position: relative; */
+	top: 50px;
+	left: 1280px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #008080;
+  margin-top: 50px;
+}
+
+.transaction-input {
+	background-color: #008080;
+    padding: 20px;
+    border-radius: 10px;
+    text-align:center;
+}
+
+.transaction-log {
+	text-align:center;
+}
+
+.chart-container {
+    width: 700px; /* Adjust the width as needed */
+    height: 700px; /* Adjust the height as needed */
+    margin: 0 auto; /* Center the chart */
+}
+
+#categoryChart {
+    max-width: 100%;
+    max-height: 100%;
+    display: block; /* Ensures proper scaling */
+    margin: auto; /* Center the chart */
+}
+
+
